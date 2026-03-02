@@ -6,6 +6,10 @@ import { digestiveData, digestiveCategoryLabels, digestiveCategoryColors, Questi
 import { nervousData, nervousCategoryLabels, nervousCategoryColors, Question as NervousQuestion } from "@/data/nervous-data";
 import { cardiovascularData, cardiovascularCategoryLabels, cardiovascularCategoryColors, Question as CardiovascularQuestion } from "@/data/cardiovascular-data";
 import { respiratoryData, respiratoryCategoryLabels, respiratoryCategoryColors, Question as RespiratoryQuestion } from "@/data/respiratory-data";
+import { urinaryData, urinaryCategoryLabels, urinaryCategoryColors, Question as UrinaryQuestion } from "@/data/urinary-data";
+import { muscularData, muscularCategoryLabels, muscularCategoryColors, Question as MuscularQuestion } from "@/data/muscular-data";
+import { endocrineData, endocrineCategoryLabels, endocrineCategoryColors, Question as EndocrineQuestion } from "@/data/endocrine-data";
+import { immuneData, immuneCategoryLabels, immuneCategoryColors, Question as ImmuneQuestion } from "@/data/immune-data";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -31,13 +35,17 @@ import {
   Utensils,
   Apple,
   Zap,
-  Wind
+  Wind,
+  Droplet,
+  Dumbbell,
+  Pill,
+  Shield
 } from "lucide-react";
 
 type Mode = "menu" | "module-select" | "quiz" | "results";
 type QuizMode = "all" | "category" | "exam";
 
-type Question = SkeletalQuestion | DigestiveQuestion | NervousQuestion | CardiovascularQuestion | RespiratoryQuestion;
+type Question = SkeletalQuestion | DigestiveQuestion | NervousQuestion | CardiovascularQuestion | RespiratoryQuestion | UrinaryQuestion | MuscularQuestion | EndocrineQuestion | ImmuneQuestion;
 
 interface AnswerRecord {
   questionId: number;
@@ -107,6 +115,46 @@ const modules: Module[] = [
     questionCount: 70,
     categories: respiratoryCategoryLabels,
     categoryColors: respiratoryCategoryColors
+  },
+  {
+    id: "urinary",
+    name: "Système Urinaire",
+    description: "Reins, filtration, homéostasie et pathologie rénale",
+    icon: <Droplet className="w-6 h-6" />,
+    color: "from-amber-500 to-orange-600",
+    questionCount: 36,
+    categories: urinaryCategoryLabels,
+    categoryColors: urinaryCategoryColors
+  },
+  {
+    id: "muscular",
+    name: "Système Musculaire",
+    description: "Structure musculaire, contraction et types de fibres",
+    icon: <Dumbbell className="w-6 h-6" />,
+    color: "from-indigo-500 to-purple-600",
+    questionCount: 25,
+    categories: muscularCategoryLabels,
+    categoryColors: muscularCategoryColors
+  },
+  {
+    id: "endocrine",
+    name: "Système Endocrinien",
+    description: "Hormones, glandes endocrines et régulation",
+    icon: <Pill className="w-6 h-6" />,
+    color: "from-teal-500 to-green-600",
+    questionCount: 27,
+    categories: endocrineCategoryLabels,
+    categoryColors: endocrineCategoryColors
+  },
+  {
+    id: "immune",
+    name: "Système Immunitaire",
+    description: "Défense immunitaire, lymphocytes et anticorps",
+    icon: <Shield className="w-6 h-6" />,
+    color: "from-fuchsia-500 to-pink-600",
+    questionCount: 25,
+    categories: immuneCategoryLabels,
+    categoryColors: immuneCategoryColors
   }
 ];
 
@@ -131,7 +179,31 @@ const categoryIcons: Record<string, React.ReactNode> = {
   'physiologie-echanges': <Activity className="w-5 h-5" />,
   'mecanique-respiratoire': <Bone className="w-5 h-5" />,
   'regulation-respiration': <Brain className="w-5 h-5" />,
-  'pathologie-pulmonaire': <Stethoscope className="w-5 h-5" />
+  'pathologie-pulmonaire': <Stethoscope className="w-5 h-5" />,
+  'anatomie-reins': <Droplet className="w-5 h-5" />,
+  'anatomie-voies-urinaires': <Target className="w-5 h-5" />,
+  'physiologie-filtration': <Activity className="w-5 h-5" />,
+  'regulation-homeostase': <Brain className="w-5 h-5" />,
+  'pathologie-rein': <Stethoscope className="w-5 h-5" />,
+  'pathologie-voies-urinaires': <Activity className="w-5 h-5" />,
+  'anatomie-structure': <Bone className="w-5 h-5" />,
+  'physiologie-contraction': <Dumbbell className="w-5 h-5" />,
+  'types-fibres': <Activity className="w-5 h-5" />,
+  'generalite': <Brain className="w-5 h-5" />,
+  'hypophyse-hypothalamus': <Pill className="w-5 h-5" />,
+  'thyroide': <Activity className="w-5 h-5" />,
+  'parathyroide': <Target className="w-5 h-5" />,
+  'surrenales': <Stethoscope className="w-5 h-5" />,
+  'pancreas': <Pill className="w-5 h-5" />,
+  'hormones-reproductives': <Activity className="w-5 h-5" />,
+  'pathophysiologie': <Stethoscope className="w-5 h-5" />,
+  'generalite-immunite': <Shield className="w-5 h-5" />,
+  'organes-lymphoides': <Target className="w-5 h-5" />,
+  'cellules-immunitaires': <Activity className="w-5 h-5" />,
+  'anticorps': <Pill className="w-5 h-5" />,
+  'complement': <Brain className="w-5 h-5" />,
+  'inflammation': <Stethoscope className="w-5 h-5" />,
+  'hypersensibilite': <Activity className="w-5 h-5" />
 };
 
 export default function QCMApp() {
@@ -152,6 +224,10 @@ export default function QCMApp() {
     if (moduleId === "nervous") return nervousData;
     if (moduleId === "cardiovascular") return cardiovascularData;
     if (moduleId === "respiratory") return respiratoryData;
+    if (moduleId === "urinary") return urinaryData;
+    if (moduleId === "muscular") return muscularData;
+    if (moduleId === "endocrine") return endocrineData;
+    if (moduleId === "immune") return immuneData;
     return [];
   };
 
