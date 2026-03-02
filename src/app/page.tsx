@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { qcmData, categoryLabels, categoryColors, Question as SkeletalQuestion } from "@/data/qcm-data";
 import { digestiveData, digestiveCategoryLabels, digestiveCategoryColors, Question as DigestiveQuestion } from "@/data/digestive-data";
 import { nervousData, nervousCategoryLabels, nervousCategoryColors, Question as NervousQuestion } from "@/data/nervous-data";
+import { cardiovascularData, cardiovascularCategoryLabels, cardiovascularCategoryColors, Question as CardiovascularQuestion } from "@/data/cardiovascular-data";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -34,7 +35,7 @@ import {
 type Mode = "menu" | "module-select" | "quiz" | "results";
 type QuizMode = "all" | "category" | "exam";
 
-type Question = SkeletalQuestion | DigestiveQuestion | NervousQuestion;
+type Question = SkeletalQuestion | DigestiveQuestion | NervousQuestion | CardiovascularQuestion;
 
 interface AnswerRecord {
   questionId: number;
@@ -84,6 +85,16 @@ const modules: Module[] = [
     questionCount: 100,
     categories: nervousCategoryLabels,
     categoryColors: nervousCategoryColors
+  },
+  {
+    id: "cardiovascular",
+    name: "Système Circulatoire",
+    description: "Cœur, vaisseaux, physiologie et circulation sanguine",
+    icon: <Activity className="w-6 h-6" />,
+    color: "from-red-500 to-rose-600",
+    questionCount: 70,
+    categories: cardiovascularCategoryLabels,
+    categoryColors: cardiovascularCategoryColors
   }
 ];
 
@@ -100,7 +111,10 @@ const categoryIcons: Record<string, React.ReactNode> = {
   'classification': <Target className="w-5 h-5" />,
   'potentiel': <Zap className="w-5 h-5" />,
   'synapse': <Target className="w-5 h-5" />,
-  'snc-snp': <Brain className="w-5 h-5" />
+  'snc-snp': <Brain className="w-5 h-5" />,
+  'circulation': <Activity className="w-5 h-5" />,
+  'valves': <Target className="w-5 h-5" />,
+  'vaisseaux': <Activity className="w-5 h-5" />
 };
 
 export default function QCMApp() {
@@ -119,6 +133,7 @@ export default function QCMApp() {
     if (moduleId === "skeletal") return qcmData;
     if (moduleId === "digestive") return digestiveData;
     if (moduleId === "nervous") return nervousData;
+    if (moduleId === "cardiovascular") return cardiovascularData;
     return [];
   };
 
