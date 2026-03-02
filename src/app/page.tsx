@@ -5,6 +5,7 @@ import { qcmData, categoryLabels, categoryColors, Question as SkeletalQuestion }
 import { digestiveData, digestiveCategoryLabels, digestiveCategoryColors, Question as DigestiveQuestion } from "@/data/digestive-data";
 import { nervousData, nervousCategoryLabels, nervousCategoryColors, Question as NervousQuestion } from "@/data/nervous-data";
 import { cardiovascularData, cardiovascularCategoryLabels, cardiovascularCategoryColors, Question as CardiovascularQuestion } from "@/data/cardiovascular-data";
+import { respiratoryData, respiratoryCategoryLabels, respiratoryCategoryColors, Question as RespiratoryQuestion } from "@/data/respiratory-data";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -29,13 +30,14 @@ import {
   TrendingUp,
   Utensils,
   Apple,
-  Zap
+  Zap,
+  Wind
 } from "lucide-react";
 
 type Mode = "menu" | "module-select" | "quiz" | "results";
 type QuizMode = "all" | "category" | "exam";
 
-type Question = SkeletalQuestion | DigestiveQuestion | NervousQuestion | CardiovascularQuestion;
+type Question = SkeletalQuestion | DigestiveQuestion | NervousQuestion | CardiovascularQuestion | RespiratoryQuestion;
 
 interface AnswerRecord {
   questionId: number;
@@ -95,6 +97,16 @@ const modules: Module[] = [
     questionCount: 70,
     categories: cardiovascularCategoryLabels,
     categoryColors: cardiovascularCategoryColors
+  },
+  {
+    id: "respiratory",
+    name: "Système Respiratoire",
+    description: "Poumons, voies aériennes, échanges gazeux et mécanique respiratoire",
+    icon: <Wind className="w-6 h-6" />,
+    color: "from-blue-500 to-cyan-600",
+    questionCount: 70,
+    categories: respiratoryCategoryLabels,
+    categoryColors: respiratoryCategoryColors
   }
 ];
 
@@ -114,7 +126,12 @@ const categoryIcons: Record<string, React.ReactNode> = {
   'snc-snp': <Brain className="w-5 h-5" />,
   'circulation': <Activity className="w-5 h-5" />,
   'valves': <Target className="w-5 h-5" />,
-  'vaisseaux': <Activity className="w-5 h-5" />
+  'vaisseaux': <Activity className="w-5 h-5" />,
+  'anatomie-voies-respiratoires': <Wind className="w-5 h-5" />,
+  'physiologie-echanges': <Activity className="w-5 h-5" />,
+  'mecanique-respiratoire': <Bone className="w-5 h-5" />,
+  'regulation-respiration': <Brain className="w-5 h-5" />,
+  'pathologie-pulmonaire': <Stethoscope className="w-5 h-5" />
 };
 
 export default function QCMApp() {
@@ -134,6 +151,7 @@ export default function QCMApp() {
     if (moduleId === "digestive") return digestiveData;
     if (moduleId === "nervous") return nervousData;
     if (moduleId === "cardiovascular") return cardiovascularData;
+    if (moduleId === "respiratory") return respiratoryData;
     return [];
   };
 
