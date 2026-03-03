@@ -207,6 +207,12 @@ const categoryIcons: Record<string, React.ReactNode> = {
 };
 
 export default function QCMApp() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const [mode, setMode] = useState<Mode>("module-select");
   const [selectedModule, setSelectedModule] = useState<Module | null>(null);
   const [quizMode, setQuizMode] = useState<QuizMode>("all");
@@ -217,6 +223,10 @@ export default function QCMApp() {
   const [answers, setAnswers] = useState<AnswerRecord[]>([]);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [examTimeLeft, setExamTimeLeft] = useState<number | null>(null);
+
+  if (!mounted) {
+    return <div className="w-full h-screen flex items-center justify-center bg-white"><div className="text-2xl font-bold">Chargement...</div></div>;
+  }
 
   const getModuleData = (moduleId: string): Question[] => {
     if (moduleId === "skeletal") return qcmData;
