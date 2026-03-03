@@ -7,6 +7,8 @@ export interface Question {
   category: 'anatomie' | 'physiologie' | 'circulation' | 'pathologie' | 'valves' | 'vaisseaux';
 }
 
+// Updated cardiovascular data with 100 comprehensive questions
+
 export const cardiovascularData: Question[] = [
   // PARTIE I : Anatomie générale du cœur (1–15)
   {

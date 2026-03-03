@@ -112,7 +112,7 @@ const modules: Module[] = [
     description: "Poumons, voies aériennes, échanges gazeux et mécanique respiratoire",
     icon: <Wind className="w-6 h-6" />,
     color: "from-blue-500 to-cyan-600",
-    questionCount: 70,
+    questionCount: 100,
     categories: respiratoryCategoryLabels,
     categoryColors: respiratoryCategoryColors
   },
@@ -122,7 +122,7 @@ const modules: Module[] = [
     description: "Reins, filtration, homéostasie et pathologie rénale",
     icon: <Droplet className="w-6 h-6" />,
     color: "from-amber-500 to-orange-600",
-    questionCount: 36,
+    questionCount: 100,
     categories: urinaryCategoryLabels,
     categoryColors: urinaryCategoryColors
   },
@@ -132,7 +132,7 @@ const modules: Module[] = [
     description: "Structure musculaire, contraction et types de fibres",
     icon: <Dumbbell className="w-6 h-6" />,
     color: "from-indigo-500 to-purple-600",
-    questionCount: 25,
+    questionCount: 100,
     categories: muscularCategoryLabels,
     categoryColors: muscularCategoryColors
   },
@@ -142,7 +142,7 @@ const modules: Module[] = [
     description: "Hormones, glandes endocrines et régulation",
     icon: <Pill className="w-6 h-6" />,
     color: "from-teal-500 to-green-600",
-    questionCount: 27,
+    questionCount: 100,
     categories: endocrineCategoryLabels,
     categoryColors: endocrineCategoryColors
   },
@@ -152,7 +152,7 @@ const modules: Module[] = [
     description: "Défense immunitaire, lymphocytes et anticorps",
     icon: <Shield className="w-6 h-6" />,
     color: "from-fuchsia-500 to-pink-600",
-    questionCount: 25,
+    questionCount: 100,
     categories: immuneCategoryLabels,
     categoryColors: immuneCategoryColors
   }

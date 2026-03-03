@@ -2,13 +2,13 @@ export interface Question {
   id: number;
   question: string;
   options: string[];
-  correctAnswer: number; // index of correct option (0-based)
+  correctAnswer: number;
   explanation: string;
   category: 'anatomie' | 'physiologie' | 'pathologie' | 'articulations';
 }
 
 export const qcmData: Question[] = [
-  // Questions 1-25
+  // ANATOMIE - Questions 1-30
   {
     id: 1,
     question: "Le squelette axial comprend :",
@@ -51,779 +51,782 @@ export const qcmData: Question[] = [
   },
   {
     id: 6,
-    question: "La moelle rouge assure :",
-    options: ["Stockage graisse", "Hématopoïèse", "Lubrification", "Résorption"],
+    question: "La métaphyse est la région :",
+    options: ["Centrale", "Entre diaphyse et épiphyse", "Terminale", "Médullaire"],
     correctAnswer: 1,
-    explanation: "Elle produit globules rouges, blancs et plaquettes.",
-    category: 'physiologie'
+    explanation: "La métaphyse contient le disque de croissance (cartilage de conjugaison) chez l'enfant.",
+    category: 'anatomie'
   },
   {
     id: 7,
-    question: "La moelle jaune est riche en :",
-    options: ["Globules rouges", "Lipides", "Calcium", "Collagène"],
+    question: "Le périoste est :",
+    options: ["Membrane interne", "Membrane externe", "Os spongieux", "Cartilage"],
     correctAnswer: 1,
-    explanation: "Elle sert de réserve énergétique.",
-    category: 'physiologie'
+    explanation: "Membrane fibreuse externe qui nourrit l'os et permet son attachement aux muscles.",
+    category: 'anatomie'
   },
   {
     id: 8,
-    question: "Les ostéoblastes assurent :",
-    options: ["Résorption", "Formation osseuse", "Infection", "Destruction"],
+    question: "L'endoste est :",
+    options: ["Membrane externe", "Membrane interne", "Cartilage", "Tissu adipeux"],
     correctAnswer: 1,
-    explanation: "Ce sont les cellules constructrices de l'os.",
-    category: 'physiologie'
+    explanation: "Membrane interne qui recouvre la cavité médullaire contenant la moelle osseuse.",
+    category: 'anatomie'
   },
   {
     id: 9,
-    question: "Les ostéoclastes assurent :",
-    options: ["Formation", "Résorption", "Stabilisation", "Lubrification"],
+    question: "La colonne vertébrale contient combien de vertèbres en total :",
+    options: ["30", "33", "35", "37"],
     correctAnswer: 1,
-    explanation: "Ils détruisent l'os ancien dans le remodelage.",
-    category: 'physiologie'
+    explanation: "7 cervicales + 12 thoraciques + 5 lombaires + 5 sacrées (fused) + 4 coccygiennes = 33",
+    category: 'anatomie'
   },
   {
     id: 10,
-    question: "Le calcium donne à l'os :",
-    options: ["Souplesse", "Rigidité", "Élasticité", "Couleur"],
+    question: "L'atlas est :",
+    options: ["C2", "C1", "C3", "T1"],
     correctAnswer: 1,
-    explanation: "Les sels minéraux assurent la dureté osseuse.",
-    category: 'physiologie'
+    explanation: "C1 (atlas) supporte la tête et s'articule avec l'axis (C2).",
+    category: 'anatomie'
   },
   {
     id: 11,
-    question: "Le collagène donne à l'os :",
-    options: ["Dureté", "Souplesse", "Minéralisation", "Poids"],
+    question: "L'axis contient :",
+    options: ["Foramen magnum", "Odontoïde", "Apophyse xiphoïde", "Lame criblée"],
     correctAnswer: 1,
-    explanation: "Le collagène évite que l'os casse facilement.",
-    category: 'physiologie'
+    explanation: "L'apophyse odontoïde (dent de l'axis) s'articule avec l'atlas permettant la rotation.",
+    category: 'anatomie'
   },
   {
     id: 12,
-    question: "L'unité structurale de l'os compact est :",
-    options: ["Trabécule", "Ostéone", "Capsule", "Canal médullaire"],
+    question: "Les vertèbres thoraciques se caractérisent par :",
+    options: ["Petit corps", "Facettes costales", "Grands foramens", "Apophyses transverses courtes"],
     correctAnswer: 1,
-    explanation: "L'ostéone contient canal de Havers + lamelles concentriques.",
+    explanation: "Les facettes costales s'articulent avec les côtes formant l'articulation costovértébrale.",
     category: 'anatomie'
   },
   {
     id: 13,
-    question: "Le canal de Havers contient :",
-    options: ["Lipides", "Vaisseaux sanguins", "Cartilage", "Capsule"],
-    correctAnswer: 1,
-    explanation: "Il permet la vascularisation de l'os.",
+    question: "La lordose cervicale est :",
+    options: ["Concavité vers l'avant", "Concavité vers l'arrière", "Absence de courbure", "Courbure latérale"],
+    correctAnswer: 0,
+    explanation: "Courbure concave vers l'avant (lordose) caractérisée par une concavité antérieure.",
     category: 'anatomie'
   },
   {
     id: 14,
-    question: "Les trabécules caractérisent :",
-    options: ["Os compact", "Os spongieux", "Capsule", "Périoste"],
+    question: "La cyphose thoracique est :",
+    options: ["Concavité vers l'avant", "Concavité vers l'arrière", "Courbure latérale", "Pas de courbure"],
     correctAnswer: 1,
-    explanation: "Structure en réseau allégeant l'os.",
+    explanation: "Courbure concave vers l'arrière (cyphose) ou convexité vers l'avant.",
     category: 'anatomie'
   },
   {
     id: 15,
-    question: "La croissance en longueur dépend :",
-    options: ["Périoste", "Cartilage de conjugaison", "Capsule", "Moelle"],
+    question: "Le canal vertébral contient :",
+    options: ["Moelle osseuse", "Moelle épinière", "Nerfs périphériques", "Vaisseaux sanguins"],
     correctAnswer: 1,
-    explanation: "La plaque épiphysaire permet l'allongement chez l'enfant.",
-    category: 'physiologie'
+    explanation: "Le canal vertébral (spinal) protège la moelle épinière et ses méninges.",
+    category: 'anatomie'
   },
   {
     id: 16,
-    question: "Une synarthrose est :",
-    options: ["Mobile", "Semi-mobile", "Immobile", "Synoviale"],
-    correctAnswer: 2,
-    explanation: "Exemple : sutures du crâne.",
-    category: 'articulations'
+    question: "Le disque intervertébral comprend :",
+    options: ["Fibrocartilage uniquement", "Noyau pulpeux + anneau fibreux", "Os + cartilage", "Ligament + tendon"],
+    correctAnswer: 1,
+    explanation: "Structure fibrocartilagineuse avec noyau gélatineux central et anneau fibreux externe.",
+    category: 'anatomie'
   },
   {
     id: 17,
-    question: "Une diarthrose est :",
-    options: ["Immobile", "Semi-mobile", "Mobile", "Fibreuse"],
-    correctAnswer: 2,
-    explanation: "Articulation synoviale (genou, épaule).",
-    category: 'articulations'
+    question: "Le sternum s'articule avec :",
+    options: ["7 côtes", "10 côtes", "12 côtes", "Vertèbres seulement"],
+    correctAnswer: 0,
+    explanation: "Les 7 premières côtes (vraies côtes) s'articulent avec le sternum par les cartilages costaux.",
+    category: 'anatomie'
   },
   {
     id: 18,
-    question: "Le liquide synovial sert à :",
-    options: ["Hématopoïèse", "Lubrification", "Résorption", "Minéralisation"],
-    correctAnswer: 1,
-    explanation: "Réduit le frottement entre surfaces articulaires.",
-    category: 'articulations'
+    question: "Les côtes flottantes sont :",
+    options: ["1-7", "8-10", "11-12", "Toutes sauf 1"],
+    correctAnswer: 2,
+    explanation: "Les 11e et 12e côtes sont libres antérieurement (non articulées au sternum).",
+    category: 'anatomie'
   },
   {
     id: 19,
-    question: "Les ligaments relient :",
-    options: ["Muscle-os", "Os-os", "Nerf-os", "Muscle-muscle"],
+    question: "Le crâne contient combien d'os :",
+    options: ["14", "22", "28", "32"],
     correctAnswer: 1,
-    explanation: "Ils stabilisent l'articulation.",
-    category: 'articulations'
+    explanation: "Le crâne contient 22 os : 8 crâniens + 14 faciaux.",
+    category: 'anatomie'
   },
   {
     id: 20,
-    question: "Les tendons relient :",
-    options: ["Os-os", "Muscle-os", "Nerf-muscle", "Capsule"],
-    correctAnswer: 1,
-    explanation: "Ils transmettent la force musculaire.",
-    category: 'articulations'
+    question: "L'os frontal forme :",
+    options: ["Tempe", "Région du nez", "Front", "Mâchoire"],
+    correctAnswer: 2,
+    explanation: "L'os frontal constitue le front et s'articule avec les os nasaux et du maxillaire.",
+    category: 'anatomie'
   },
   {
     id: 21,
-    question: "L'ostéoporose est caractérisée par :",
-    options: ["Infection", "Perte masse osseuse", "Luxation", "Tumeur"],
-    correctAnswer: 1,
-    explanation: "Résorption > formation → os fragile.",
-    category: 'pathologie'
+    question: "L'os pariétal est situé :",
+    options: ["Au front", "Temporalement", "Au sommet du crâne", "À la base"],
+    correctAnswer: 2,
+    explanation: "Les deux os pariétaux forment le toit du crâne à la partie supérieure.",
+    category: 'anatomie'
   },
   {
     id: 22,
-    question: "Une fracture correspond à :",
-    options: ["Déplacement articulaire", "Rupture osseuse", "Infection", "Inflammation"],
+    question: "Le foramen magnum permet :",
+    options: ["Passage du nerf optique", "Passage de la moelle épinière", "Passage de l'artère carotide", "Passage du nerf facial"],
     correctAnswer: 1,
-    explanation: "Une fracture est une rupture ou fissure de l'os.",
-    category: 'pathologie'
+    explanation: "Le foramen magnum dans l'os occipital permet la communication entre crâne et canal rachidien.",
+    category: 'anatomie'
   },
   {
     id: 23,
-    question: "L'arthrose touche principalement :",
-    options: ["Moelle", "Cartilage articulaire", "Capsule", "Périoste"],
-    correctAnswer: 1,
-    explanation: "Dégénérescence du cartilage.",
-    category: 'pathologie'
+    question: "L'apophyse mastoïde appartient à :",
+    options: ["Temporal", "Pariétal", "Occipital", "Frontal"],
+    correctAnswer: 0,
+    explanation: "Proéminence osseuse du temporal derrière l'oreille, point d'insertion musculaire.",
+    category: 'anatomie'
   },
   {
     id: 24,
-    question: "La stabilité articulaire dépend surtout :",
-    options: ["Moelle", "Ligaments + capsule", "Calcium", "Nerfs"],
-    correctAnswer: 1,
-    explanation: "Les ligaments et la capsule articulaire assurent la stabilité.",
-    category: 'articulations'
+    question: "La selle turcique contient :",
+    options: ["Amygdale", "Cervelet", "Hypophyse", "Thalamus"],
+    correctAnswer: 2,
+    explanation: "Cavité de l'os sphénoïde hébergeant l'hypophyse (glande pituitaire).",
+    category: 'anatomie'
   },
   {
     id: 25,
-    question: "Le squelette appendiculaire comprend :",
-    options: ["Crâne", "Membres", "Colonne", "Sternum"],
+    question: "L'os hyoïde est unique car :",
+    options: ["C'est le plus gros os", "Il n'a pas d'articulation", "Il est pair", "Il s'articule au sternum"],
     correctAnswer: 1,
-    explanation: "Il permet la locomotion.",
+    explanation: "L'os hyoïde est maintenu par des muscles et ligaments, sans articulation osseuse.",
     category: 'anatomie'
   },
-  // Questions 26-50
   {
     id: 26,
-    question: "Le nombre de vertèbres thoraciques est :",
-    options: ["7", "12", "5", "8"],
-    correctAnswer: 1,
-    explanation: "Il y a 12 vertèbres thoraciques (T1–T12).",
+    question: "Les clavicules sont :",
+    options: ["Vertébrales", "Côtes", "Os du membre supérieur", "Os du bassin"],
+    correctAnswer: 2,
+    explanation: "Deux os du membre supérieur articulés au sternum et à l'acromion (scapula).",
     category: 'anatomie'
   },
   {
     id: 27,
-    question: "Le nombre de vertèbres cervicales est :",
-    options: ["5", "7", "12", "26"],
+    question: "La scapula (omoplate) contient :",
+    options: ["Cavité cotyle", "Cavité glénoïde", "Acétabulum", "Fosse olécranienne"],
     correctAnswer: 1,
-    explanation: "7 cervicales (C1–C7).",
+    explanation: "Cavité glénoïde superficielle accueillant la tête de l'humérus pour l'articulation gléno-humérale.",
     category: 'anatomie'
   },
   {
     id: 28,
-    question: "Le sternum protège :",
-    options: ["Moelle", "Cerveau", "Cœur", "Rein"],
+    question: "L'acromion est une projection de :",
+    options: ["Clavicule", "Humérus", "Scapula", "Ulna"],
     correctAnswer: 2,
-    explanation: "Le sternum fait partie de la cage thoracique qui protège le cœur.",
+    explanation: "Processus épineux de la scapula, servant de point de repère et d'articulation.",
     category: 'anatomie'
   },
   {
     id: 29,
-    question: "La scapula est un os :",
-    options: ["Long", "Plat", "Court", "Irrégulier"],
-    correctAnswer: 1,
-    explanation: "La scapula (omoplate) est un os plat triangulaire.",
+    question: "Le bassin osseux se divise en :",
+    options: ["2 parties", "3 parties", "4 parties", "5 parties"],
+    correctAnswer: 2,
+    explanation: "Grand bassin (sus-pelvien), petit bassin (sous-pelvien) et détroit pelvien.",
     category: 'anatomie'
   },
   {
     id: 30,
-    question: "Le fémur est l'os le plus :",
-    options: ["Court", "Long", "Plat", "Fragile"],
-    correctAnswer: 1,
-    explanation: "Le fémur est l'os le plus long du corps humain.",
+    question: "L'acétabulum reçoit :",
+    options: ["Tête fémorale", "Tête tibiale", "Extrémité fibulaire", "Condyle fémoral"],
+    correctAnswer: 0,
+    explanation: "Cavité du bassin formée par la fusion du pubis, ischium et ilium, accueillant la tête du fémur.",
     category: 'anatomie'
   },
+  
+  // PHYSIOLOGIE - Questions 31-60
   {
     id: 31,
-    question: "Le tibia appartient :",
-    options: ["Bras", "Jambe", "Cuisse", "Avant-bras"],
+    question: "L'ossification enchondrale débute par :",
+    options: ["Calcification", "Formation de cartilage", "Formation de matrices osseuses", "Minéralisation"],
     correctAnswer: 1,
-    explanation: "Le tibia est l'os principal de la jambe.",
-    category: 'anatomie'
+    explanation: "Formation d'un modèle cartilagineux qui sera remplacé par l'os.",
+    category: 'physiologie'
   },
   {
     id: 32,
-    question: "L'humérus appartient :",
-    options: ["Membre supérieur", "Membre inférieur", "Axial", "Pelvien"],
-    correctAnswer: 0,
-    explanation: "L'humérus est l'os du bras (membre supérieur).",
-    category: 'anatomie'
+    question: "L'ossification intramembraneuse débute par :",
+    options: ["Cartilage", "Membrane fibreuse", "Hyaline", "Élastique"],
+    correctAnswer: 1,
+    explanation: "Ossification directe dans une membrane mésenchymateuse sans stade cartilagineux.",
+    category: 'physiologie'
   },
   {
     id: 33,
-    question: "Les os du carpe sont :",
-    options: ["Longs", "Courts", "Plats", "Irréguliers"],
+    question: "Les ostéoblastes sont responsables de :",
+    options: ["Destruction osseuse", "Formation osseuse", "Résorption", "Calcification seulement"],
     correctAnswer: 1,
-    explanation: "Les 8 os du carpe sont des os courts.",
-    category: 'anatomie'
+    explanation: "Cellules productrices de matrice osseuse et de minéraux pour la formation osseuse.",
+    category: 'physiologie'
   },
   {
     id: 34,
-    question: "La rotule est un os :",
-    options: ["Long", "Plat", "Court", "Sésamoïde"],
-    correctAnswer: 3,
-    explanation: "La rotule est un os sésamoïde développé dans le tendon du quadriceps.",
-    category: 'anatomie'
+    question: "Les ostéoclastes sont responsables de :",
+    options: ["Formation osseuse", "Résorption osseuse", "Calcification", "Synthèse collagénique"],
+    correctAnswer: 1,
+    explanation: "Cellules multinucléées résorbant l'os par acidification et libération d'enzymes.",
+    category: 'physiologie'
   },
   {
     id: 35,
-    question: "Les côtes sont des os :",
-    options: ["Longs", "Courts", "Plats", "Irréguliers"],
-    correctAnswer: 2,
-    explanation: "Les côtes sont classées comme os plats.",
-    category: 'anatomie'
+    question: "Les ostéocytes sont :",
+    options: ["Précurseurs ostéoblastiques", "Ostéoblastes matures dans l'os", "Cellules mésenchymateuses", "Fibroblastes"],
+    correctAnswer: 1,
+    explanation: "Ostéoblastes emprisonnés dans des lacunes osseuses, maintenant la matrice.",
+    category: 'physiologie'
   },
   {
     id: 36,
-    question: "L'os spongieux est riche en :",
-    options: ["Ostéones", "Trabécules", "Capsule", "Tendons"],
+    question: "La minéralisation osseuse dépend primarily de :",
+    options: ["Phosphore seul", "Calcium et phosphore", "Magnésium", "Sodium et potassium"],
     correctAnswer: 1,
-    explanation: "L'os spongieux est caractérisé par son réseau de trabécules.",
-    category: 'anatomie'
+    explanation: "Cristaux hydroxyapatite (Ca10(PO4)6(OH)2) assurent la dureté osseuse.",
+    category: 'physiologie'
   },
   {
     id: 37,
-    question: "La métaphyse contient :",
-    options: ["Moelle jaune", "Cartilage de conjugaison", "Capsule", "Ligament"],
+    question: "La vitamine D agit sur :",
+    options: ["Formation collagénique", "Absorption intestinale du calcium", "Résorption osseuse", "Synthèse PTH"],
     correctAnswer: 1,
-    explanation: "La métaphyse est la zone de croissance avec le cartilage de conjugaison.",
-    category: 'anatomie'
+    explanation: "Augmente absorption du calcium par l'intestin grêle et réabsorption rénale.",
+    category: 'physiologie'
   },
   {
     id: 38,
-    question: "La croissance en épaisseur dépend :",
-    options: ["Cartilage", "Moelle", "Périoste", "Capsule"],
-    correctAnswer: 2,
-    explanation: "Le périoste permet la croissance en épaisseur par apposition.",
+    question: "La parathormone (PTH) :",
+    options: ["Baisse le calcium", "Augmente le calcium", "N'affecte pas le calcium", "Augmente le phosphore"],
+    correctAnswer: 1,
+    explanation: "Augmente résorption osseuse, réabsorption rénale du Ca et synthèse vitamine D.",
     category: 'physiologie'
   },
   {
     id: 39,
-    question: "Les ostéocytes sont :",
-    options: ["Cellules matures", "Immatures", "Lipidiques", "Cartilagineuses"],
-    correctAnswer: 0,
-    explanation: "Les ostéocytes sont les cellules osseuses matures.",
+    question: "La calcitonine :",
+    options: ["Augmente le calcium", "Baisse le calcium", "Augmente le phosphore", "N'a pas d'effet osseux"],
+    correctAnswer: 1,
+    explanation: "Inhibe ostéoclastes et favorise calcium urinaire, baissant calcémie.",
     category: 'physiologie'
   },
   {
     id: 40,
-    question: "Le remodelage osseux est :",
-    options: ["Rare", "Permanent", "Inexistant", "Pathologique"],
-    correctAnswer: 1,
-    explanation: "Le remodelage osseux est un processus permanent tout au long de la vie.",
+    question: "Le remodelage osseux désigne :",
+    options: ["Formation uniquement", "Résorption uniquement", "Formation et résorption cycliques", "Croissance linéaire"],
+    correctAnswer: 2,
+    explanation: "Processus continu de destruction et reconstruction osseuse (remplacement complet ~10 ans).",
     category: 'physiologie'
   },
   {
     id: 41,
-    question: "La minéralisation dépend surtout de :",
-    options: ["Sodium", "Fer", "Calcium", "Potassium"],
+    question: "Le taux de remodelage augmente avec :",
+    options: ["Repos", "Immobilisation", "Charge mécanique", "Repos allongé"],
     correctAnswer: 2,
-    explanation: "Le calcium est le minéral principal de l'os.",
+    explanation: "Force mécanique stimule ostéoblastes via senseurs (ostéocytes et intégrines).",
     category: 'physiologie'
   },
   {
     id: 42,
-    question: "Une amphiarthrose est :",
-    options: ["Immobile", "Semi-mobile", "Mobile", "Fixe"],
+    question: "La moelle rouge produit :",
+    options: ["Plasma", "Globules rouges et blancs", "Lymphe", "Insuline"],
     correctAnswer: 1,
-    explanation: "Une amphiarthrose est une articulation semi-mobile (ex: symphyse pubienne).",
-    category: 'articulations'
+    explanation: "Hématopoïèse productrices d'érythrocytes, leucocytes et thrombocytes.",
+    category: 'physiologie'
   },
   {
     id: 43,
-    question: "Une synarthrose est :",
-    options: ["Mobile", "Semi-mobile", "Immobile", "Synoviale"],
-    correctAnswer: 2,
-    explanation: "Une synarthrose est une articulation immobile (ex: sutures du crâne).",
-    category: 'articulations'
+    question: "La moelle jaune est composée de :",
+    options: ["Cellules souches", "Tissu adipeux", "Cellules sanguines", "Fibrocartilage"],
+    correctAnswer: 1,
+    explanation: "Tissu adipeux riche en graisses de réserve, peu d'hématopoïèse.",
+    category: 'physiologie'
   },
   {
     id: 44,
-    question: "Le genou est une :",
-    options: ["Synarthrose", "Amphiarthrose", "Diarthrose", "Fixe"],
+    question: "L'hématopoïèse se produit principalement dans :",
+    options: ["Diaphyse", "Épiphyse", "Moelle rouge", "Périoste"],
     correctAnswer: 2,
-    explanation: "Le genou est une diarthrose (articulation synoviale mobile).",
-    category: 'articulations'
+    explanation: "Processus de formation des cellules sanguines dans la moelle osseuse rouge.",
+    category: 'physiologie'
   },
   {
     id: 45,
-    question: "Les ligaments stabilisent :",
-    options: ["Muscle", "Os", "Articulation", "Moelle"],
+    question: "La matrice osseuse comporte :",
+    options: ["Collagène seul", "Minéraux seuls", "Collagène (30%) + minéraux (70%)", "Eau principalement"],
     correctAnswer: 2,
-    explanation: "Les ligaments stabilisent les articulations.",
-    category: 'articulations'
+    explanation: "Composition combinée donnant à l'os rigidité (minéraux) et flexibilité (collagène).",
+    category: 'physiologie'
   },
   {
     id: 46,
-    question: "La luxation correspond à :",
-    options: ["Rupture os", "Infection", "Déplacement os articulation", "Résorption"],
+    question: "La fusion des épiphyses complète vers :",
+    options: ["15-16 ans", "18-20 ans", "21-25 ans", "30-35 ans"],
     correctAnswer: 2,
-    explanation: "Une luxation est le déplacement permanent des surfaces articulaires.",
-    category: 'pathologie'
+    explanation: "Fermeture du disque de croissance (cartilage de conjugaison) cessant la croissance linéaire.",
+    category: 'physiologie'
   },
   {
     id: 47,
-    question: "L'ostéoporose entraîne :",
-    options: ["Solidité", "Fragilité", "Hypertrophie", "Infection"],
-    correctAnswer: 1,
-    explanation: "L'ostéoporose fragilise l'os par perte de masse osseuse.",
-    category: 'pathologie'
+    question: "L'apposition osseuse augmente :",
+    options: ["Longueur", "Diamètre", "Épaisseur de la diaphyse", "Profondeur"],
+    correctAnswer: 2,
+    explanation: "Croissance en épaisseur par dépôt sur periosteum externe et résorption interne.",
+    category: 'physiologie'
   },
   {
     id: 48,
-    question: "La moelle rouge est surtout présente dans :",
-    options: ["Os plats", "Diaphyse adulte", "Capsule", "Tendon"],
-    correctAnswer: 0,
-    explanation: "La moelle rouge se trouve principalement dans les os plats et les épiphyses.",
-    category: 'anatomie'
+    question: "La résistance mécanique de l'os dépend de :",
+    options: ["Minéralisation seule", "Collagène seul", "Géométrie + minéralisation + collagène", "Densité osseuse uniquement"],
+    correctAnswer: 2,
+    explanation: "Combinaison de composition, architecture et qualité osseuse.",
+    category: 'physiologie'
   },
   {
     id: 49,
-    question: "Le canal médullaire contient :",
-    options: ["Capsule", "Moelle", "Ligament", "Cartilage"],
+    question: "Les ligaments osseux servent à :",
+    options: ["Stocker du calcium", "Joindre os à os", "Joindre os à muscle", "Joindre muscle à muscle"],
     correctAnswer: 1,
-    explanation: "Le canal médullaire contient la moelle osseuse.",
-    category: 'anatomie'
+    explanation: "Structures fibreuses assurant la cohésion et la stabilité articulaire.",
+    category: 'physiologie'
   },
   {
     id: 50,
-    question: "L'ostéone appartient à :",
-    options: ["Os spongieux", "Os compact", "Capsule", "Périoste"],
+    question: "La charge mécanique provoque :",
+    options: ["Perte osseuse", "Gain osseux", "Aucun effet", "Atrophie"],
     correctAnswer: 1,
-    explanation: "L'ostéone est l'unité structurale de l'os compact.",
-    category: 'anatomie'
+    explanation: "Stress mécanique stimule ostéoblastes et remodelage anabolique.",
+    category: 'physiologie'
   },
-  // Questions 51-75
   {
     id: 51,
-    question: "La colonne vertébrale protège :",
-    options: ["Le cerveau", "La moelle épinière", "Le cœur", "Les poumons"],
+    question: "L'immobilisation provoque :",
+    options: ["Gain osseux", "Perte osseuse", "Aucun effet", "Calcification"],
     correctAnswer: 1,
-    explanation: "La colonne vertébrale forme un canal qui protège la moelle épinière.",
-    category: 'anatomie'
+    explanation: "Absence de stimuli mécaniques diminue remodelage, déminéralisation osseuse.",
+    category: 'physiologie'
   },
   {
     id: 52,
-    question: "Le cartilage articulaire est :",
-    options: ["Vascularisé", "Non vascularisé", "Innervé", "Richement vascularisé"],
+    question: "Le pic de masse osseuse est atteint vers :",
+    options: ["15-18 ans", "20-30 ans", "35-40 ans", "50+ ans"],
     correctAnswer: 1,
-    explanation: "Le cartilage articulaire est avasculaire, nourri par le liquide synovial.",
-    category: 'anatomie'
+    explanation: "Masse maximale atteinte vers 25-30 ans, puis décline lentement.",
+    category: 'physiologie'
   },
   {
     id: 53,
-    question: "L'articulation de l'épaule est de type :",
-    options: ["Charnière", "Pivot", "Sphéroïde", "Selle"],
-    correctAnswer: 2,
-    explanation: "L'épaule est une articulation sphéroïde permettant mouvements dans tous les plans.",
-    category: 'articulations'
+    question: "L'œstrogène affecte l'os par :",
+    options: ["Augmentation ostéoclastes", "Inhibition ostéoclastes", "Stimulation ostéoblastes", "Inhibition ostéoblastes"],
+    correctAnswer: 1,
+    explanation: "Hormone anti-résorption ralentissant ostéoclastes et prévenant perte osseuse.",
+    category: 'physiologie'
   },
   {
     id: 54,
-    question: "L'articulation du coude est de type :",
-    options: ["Charnière", "Pivot", "Sphéroïde", "Selle"],
-    correctAnswer: 0,
-    explanation: "Le coude est une articulation en charnière (flexion/extension).",
-    category: 'articulations'
+    question: "La ménopause provoque :",
+    options: ["Gain osseux", "Perte osseuse rapide", "Aucun effet", "Sclérose"],
+    correctAnswer: 1,
+    explanation: "Chute œstrogène augmente résorption et diminue absorption calcium.",
+    category: 'physiologie'
   },
   {
     id: 55,
-    question: "Les sutures crâniennes sont :",
-    options: ["Mobiles", "Semi-mobiles", "Immobiles", "Synoviales"],
-    correctAnswer: 2,
-    explanation: "Les sutures crâniennes sont des synarthroses (immobiles).",
-    category: 'articulations'
+    question: "L'androgène affecte l'os par :",
+    options: ["Perte de masse", "Gain de masse", "Aucun effet", "Atrophie"],
+    correctAnswer: 1,
+    explanation: "Stimule ostéoblastes et augmente masse musculaire (charge mécanique).",
+    category: 'physiologie'
   },
   {
     id: 56,
-    question: "Le bassin protège :",
-    options: ["Le cœur", "Les organes pelviens", "Le cerveau", "Les poumons"],
+    question: "L'épaisseur du cortex (os compact) :",
+    options: ["Est fixe", "Augmente avec charge", "Diminue avec âge", "Est génétiquement constante"],
     correctAnswer: 1,
-    explanation: "Le bassin protège les organes pelviens (vessie, rectum, organes reproducteurs).",
-    category: 'anatomie'
+    explanation: "Augmente chez sportifs, diminue chez sédentaires ou immobilisés.",
+    category: 'physiologie'
   },
   {
     id: 57,
-    question: "Le nombre de vertèbres lombaires est :",
-    options: ["3", "4", "5", "7"],
-    correctAnswer: 2,
-    explanation: "Il y a 5 vertèbres lombaires (L1-L5).",
-    category: 'anatomie'
+    question: "La porosité osseuse :",
+    options: ["Augmente avec charge", "Diminue avec charge", "N'est pas affectée", "Augmente avec âge"],
+    correctAnswer: 1,
+    explanation: "L'exercice diminue porosité par augmentation densité osseuse.",
+    category: 'physiologie'
   },
   {
     id: 58,
-    question: "L'axis (C2) permet :",
-    options: ["Flexion", "Extension", "Rotation de la tête", "Abduction"],
-    correctAnswer: 2,
-    explanation: "L'axis avec sa dent de l'axis permet la rotation de la tête.",
-    category: 'anatomie'
+    question: "Le turnover osseux est mesuré par :",
+    options: ["Calcémie", "Marqueurs de remodelage", "Poids total", "Longueur osseuse"],
+    correctAnswer: 1,
+    explanation: "P1NP, CTX, et autres marqueurs reflètent l'activité de formation/résorption.",
+    category: 'physiologie'
   },
   {
     id: 59,
-    question: "L'atlas (C1) a pour fonction :",
-    options: ["Rotation", "Support du crâne", "Flexion forcée", "Extension"],
+    question: "La fragilité osseuse augmente avec :",
+    options: ["Minéralisation augmentée", "Augmentation porosité", "Épaisseur augmentée", "Aucune"],
     correctAnswer: 1,
-    explanation: "L'atlas supporte le crâne et permet les mouvements de 'oui'.",
-    category: 'anatomie'
+    explanation: "Architecture dégradée et minéralisation réduite diminuent résistance aux fractures.",
+    category: 'physiologie'
   },
   {
     id: 60,
-    question: "Le sacrum a une forme :",
-    options: ["Rectangulaire", "Triangulaire", "Ronde", "Ovale"],
+    question: "La résorption osseuse accélère avec :",
+    options: ["Exercice intense", "Immobilisation prolongée", "Charge mécanique", "Augmentation activité physique"],
     correctAnswer: 1,
-    explanation: "Le sacrum a une forme triangulaire à base supérieure.",
-    category: 'anatomie'
+    explanation: "Repos prolongé diminue stimuli mécaniques augmentant ostéoclastes.",
+    category: 'physiologie'
   },
+  
+  // PATHOLOGIE - Questions 61-85
   {
     id: 61,
-    question: "Le tibia a pour fonction principale :",
-    options: ["Rotation", "Support du poids", "Flexion", "Abduction"],
+    question: "L'ostéoporose se caractérise par :",
+    options: ["Augmentation densité", "Diminution densité osseuse", "Augmentation porosité", "Sclérose"],
     correctAnswer: 1,
-    explanation: "Le tibia est l'os principal qui supporte le poids du corps.",
-    category: 'anatomie'
+    explanation: "Maladie métabolique : diminution masse osseuse sans défaut minéralisation.",
+    category: 'pathologie'
   },
   {
     id: 62,
-    question: "L'ulna (cubitus) se trouve dans :",
-    options: ["Le bras", "L'avant-bras", "La cuisse", "La jambe"],
+    question: "L'ostéomalacie correspond à :",
+    options: ["Ostéoporose", "Carence en vitamine D de l'adulte", "Rachitisme", "Sclérose osseuse"],
     correctAnswer: 1,
-    explanation: "L'ulna est un des deux os de l'avant-bras avec le radius.",
-    category: 'anatomie'
+    explanation: "Minéralisation défectueuse par déficit vitamine D, calcémie ou phosphatémie.",
+    category: 'pathologie'
   },
   {
     id: 63,
-    question: "Les phalanges sont classées comme :",
-    options: ["Os courts", "Os longs", "Os plats", "Os irréguliers"],
+    question: "Le rachitisme affecte principalement :",
+    options: ["Adultes", "Enfants", "Personnes âgées", "Athlètes"],
     correctAnswer: 1,
-    explanation: "Les phalanges sont des os longs miniatures.",
-    category: 'anatomie'
+    explanation: "Maladie de l'enfant : minéralisation osseuse défectueuse par carence nutritionnelle.",
+    category: 'pathologie'
   },
   {
     id: 64,
-    question: "Le nombre de côtes vraies est :",
-    options: ["5 paires", "7 paires", "10 paires", "12 paires"],
+    question: "L'hyperparathyroïdie provoque :",
+    options: ["Baisse calcémie", "Augmentation calcémie", "Aucun effet", "Augmentation potassium"],
     correctAnswer: 1,
-    explanation: "Les 7 premières paires de côtes sont les côtes vraies (attachées au sternum).",
-    category: 'anatomie'
+    explanation: "Excès PTH augmente résorption osseuse et calcémie (hypercalcémie).",
+    category: 'pathologie'
   },
   {
     id: 65,
-    question: "Les côtes flottantes sont les :",
-    options: ["9e et 10e", "10e et 11e", "11e et 12e", "12e et 13e"],
-    correctAnswer: 2,
-    explanation: "Les 11e et 12e côtes sont flottantes (non attachées au sternum).",
-    category: 'anatomie'
+    question: "L'hypoparathyroïdie provoque :",
+    options: ["Hypercalcémie", "Hypocalcémie", "Hyperphosphatémie", "Aucun effet"],
+    correctAnswer: 1,
+    explanation: "Déficit PTH baisse calcémie, augmente phosphatémie (hypocalcémie).",
+    category: 'pathologie'
   },
   {
     id: 66,
-    question: "La vitamine D est essentielle pour :",
-    options: ["Synthèse collagène", "Absorption calcium", "Formation globules", "Lubrification"],
+    question: "La maladie de Paget se caractérise par :",
+    options: ["Perte osseuse uniformément", "Résorption puis formation excessive", "Minéralisation défectueuse", "Fracture simple"],
     correctAnswer: 1,
-    explanation: "La vitamine D favorise l'absorption intestinale du calcium.",
-    category: 'physiologie'
+    explanation: "Cycles anormaux résorption-formation provoquant os large, faible et déformé.",
+    category: 'pathologie'
   },
   {
     id: 67,
-    question: "La parathormone (PTH) :",
-    options: ["Diminue calcium", "Augmente calcium", "Diminue phosphore", "Augmente collagène"],
+    question: "L'ostéomyélite est :",
+    options: ["Inflammation articulaire", "Infection osseuse et médullaire", "Fracture osseuse", "Érosion"],
     correctAnswer: 1,
-    explanation: "La PTH augmente la calcémie en stimulant la résorption osseuse.",
-    category: 'physiologie'
+    explanation: "Infection bactérienne de l'os et moelle, généralement staphylocoque.",
+    category: 'pathologie'
   },
   {
     id: 68,
-    question: "La calcitonine :",
-    options: ["Augmente calcium", "Diminue calcium", "Augmente résorption", "Stimule ostéoclastes"],
+    question: "La tuberculose osseuse affecte principalement :",
+    options: ["Fémur uniquement", "Vertèbres", "Côtes", "Crâne"],
     correctAnswer: 1,
-    explanation: "La calcitonine diminue la calcémie en inhibant les ostéoclastes.",
-    category: 'physiologie'
+    explanation: "Localisation vertébrale (mal de Pott) fréquente en tuberculose généralisée.",
+    category: 'pathologie'
   },
   {
     id: 69,
-    question: "L'os compact représente environ :",
-    options: ["50%", "60%", "80%", "90%"],
-    correctAnswer: 2,
-    explanation: "L'os compact représente environ 80% de la masse osseuse totale.",
-    category: 'anatomie'
+    question: "L'ostéosarcome est :",
+    options: ["Infection", "Malignité osseuse primitive", "Fracture", "Dégénération"],
+    correctAnswer: 1,
+    explanation: "Cancer osseux malin, principalement métaphysaire chez enfant/adolescent.",
+    category: 'pathologie'
   },
   {
     id: 70,
-    question: "Le périoste est un :",
-    options: ["Cartilage", "Membrane fibreuse", "Ligament", "Tendon"],
+    question: "Le myélome multiple atteint :",
+    options: ["Os cortical", "Moelle rouge (plasmocytes)", "Cartilage", "Périoste"],
     correctAnswer: 1,
-    explanation: "Le périoste est une membrane fibreuse qui entoure l'os.",
-    category: 'anatomie'
+    explanation: "Malignité des plasmocytes dans moelle osseuse, fractures lytiques multiples.",
+    category: 'pathologie'
   },
   {
     id: 71,
-    question: "La zone métaphysaire est le site de :",
-    options: ["Résorption", "Croissance en longueur", "Moelle jaune", "Articulation"],
+    question: "La fracture pathologique est causée par :",
+    options: ["Trauma violent", "Pathologie osseuse affaiblissant l'os", "Chute simple", "Sport"],
     correctAnswer: 1,
-    explanation: "La métaphyse contient le cartilage de croissance pour l'allongement.",
-    category: 'physiologie'
+    explanation: "Fracture spontanée ou par trauma minime sur os fragilisé (ostéoporose, métastases, etc).",
+    category: 'pathologie'
   },
   {
     id: 72,
-    question: "Le processus de remodelage implique :",
-    options: ["Ostéoblastes seuls", "Ostéoclastes seuls", "Ostéoblastes + ostéoclastes", "Chondrocytes"],
+    question: "La consolidation osseuse dépend de :",
+    options: ["Immobilité seule", "Âge seul", "Immobilité + jeune âge + vascularisation + nutrition", "Pas de facteurs"],
     correctAnswer: 2,
-    explanation: "Le remodelage est un équilibre entre formation et résorption.",
-    category: 'physiologie'
+    explanation: "Processus complexe : immobilisation, perfusion, apport en calcium/protéines/vitamine C.",
+    category: 'pathologie'
   },
   {
     id: 73,
-    question: "L'articulation de la hanche est de type :",
-    options: ["Charnière", "Pivot", "Sphéroïde", "Selle"],
-    correctAnswer: 2,
-    explanation: "La hanche est une articulation sphéroïde (énarthrose).",
-    category: 'articulations'
+    question: "Le délai de consolidation chez l'enfant :",
+    options: ["Plus long qu'adulte", "Plus court qu'adulte", "Identique", "Imprévisible"],
+    correctAnswer: 1,
+    explanation: "Enfants consolidant 2-3x plus vite grâce à ostéoblastes actifs et bonne vascularisation.",
+    category: 'pathologie'
   },
   {
     id: 74,
-    question: "La symphyse pubienne est une :",
-    options: ["Synarthrose", "Amphiarthrose", "Diarthrose", "Arthrodie"],
+    question: "La cal vicieux est :",
+    options: ["Consolidation rapide", "Consolidation en mauvaise position", "Perte de consolidation", "Double consolidation"],
     correctAnswer: 1,
-    explanation: "La symphyse pubienne est une amphiarthrose (semi-mobile).",
-    category: 'articulations'
+    explanation: "Défaut d'alignment provoquant déformation et dysfonction articulaire.",
+    category: 'pathologie'
   },
   {
     id: 75,
-    question: "Le nombre d'os du carpe est :",
-    options: ["5", "6", "7", "8"],
-    correctAnswer: 3,
-    explanation: "Il y a 8 os du carpe dans chaque poignet.",
-    category: 'anatomie'
+    question: "La pseudarthrose correspond à :",
+    options: ["Consolidation rapide", "Absence de consolidation", "Consolidation partielle", "Hyper-consolidation"],
+    correctAnswer: 1,
+    explanation: "Non-union osseuse : absence de calcification entre fragments de fracture.",
+    category: 'pathologie'
   },
-  // Questions 76-100
   {
     id: 76,
-    question: "Le nombre d'os du tarse est :",
-    options: ["5", "6", "7", "8"],
-    correctAnswer: 2,
-    explanation: "Il y a 7 os du tarse dans chaque pied.",
-    category: 'anatomie'
+    question: "Le cal hypertrophique est :",
+    options: ["Consolidation insuffisante", "Excès de callus", "Absence de callus", "Cal fibreux"],
+    correctAnswer: 1,
+    explanation: "Formation excessive de callus osseux, généralement avec mobilité persistante.",
+    category: 'pathologie'
   },
   {
     id: 77,
-    question: "L'os le plus volumineux du corps est :",
-    options: ["Fémur", "Tibia", "Humérus", "Bassin"],
-    correctAnswer: 0,
-    explanation: "Le fémur est l'os le plus long et le plus volumineux.",
-    category: 'anatomie'
+    question: "La luxation articulaire signifie :",
+    options: ["Fracture", "Séparation permanente des surfaces articulaires", "Inflammation", "Raideur"],
+    correctAnswer: 1,
+    explanation: "Déplacement complet de l'articulation, urgence orthopédique requérant réduction.",
+    category: 'pathologie'
   },
   {
     id: 78,
-    question: "La clavicule est un os :",
-    options: ["Long", "Court", "Plat", "Sésamoïde"],
-    correctAnswer: 0,
-    explanation: "La clavicule est un os long (bien que courbe).",
-    category: 'anatomie'
+    question: "L'entorse correspond à :",
+    options: ["Fracture", "Lésion ligamentaire sans luxation", "Rupture musculaire", "Inflammation"],
+    correctAnswer: 1,
+    explanation: "Étirement ou déchirure partielle de ligament, instabilité légère à modérée.",
+    category: 'pathologie'
   },
   {
     id: 79,
-    question: "Le radius est situé :",
-    options: ["En dedans", "En dehors", "En avant", "En arrière"],
+    question: "La spondylose cervicale est :",
+    options: ["Fracture vertébrale", "Arthrose cervicale progressive", "Infection", "Tumeur"],
     correctAnswer: 1,
-    explanation: "Le radius est situé en dehors dans l'avant-bras (côté pouce).",
-    category: 'anatomie'
+    explanation: "Dégénérescence discale et arthrose provocant compression médullaire/radiculaire.",
+    category: 'pathologie'
   },
   {
     id: 80,
-    question: "Le calcanéus est un os du :",
-    options: ["Carpe", "Tarse", "Métacarpe", "Métatarse"],
+    question: "La hernie discale provoque :",
+    options: ["Fracture", "Protrusion nucleus pulposus comprimant nerves", "Ankylose", "Luxation"],
     correctAnswer: 1,
-    explanation: "Le calcanéus est le plus gros os du tarse (os du talon).",
-    category: 'anatomie'
+    explanation: "Déplacement du contenu discal compression nervure/moelle, douleur radiculaire/myélique.",
+    category: 'pathologie'
   },
   {
     id: 81,
-    question: "La fracture du col du fémur est fréquente chez :",
-    options: ["Enfants", "Adolescents", "Adultes jeunes", "Personnes âgées"],
-    correctAnswer: 3,
-    explanation: "Fréquente chez les personnes âgées ostéoporotiques.",
+    question: "L'ankylose est :",
+    options: ["Douleur", "Perte de mobilité articulaire", "Inflammation", "Luxation"],
+    correctAnswer: 1,
+    explanation: "Fusion osseuse complète de l'articulation (ankylosis) ou raideur fibreuse grave.",
     category: 'pathologie'
   },
   {
     id: 82,
-    question: "L'arthrite se distingue de l'arthrose par :",
-    options: ["Usure cartilage", "Inflammation articulaire", "Absence douleur", "Stabilité"],
+    question: "L'arthrose est caractérisée par :",
+    options: ["Inflammation auto-immune", "Dégénération cartilagineuse progressive", "Infection", "Luxation"],
     correctAnswer: 1,
-    explanation: "L'arthrite implique une inflammation, contrairement à l'arthrose.",
+    explanation: "Maladie dégénérative : perte cartilage, ostéophytes, douleur et raideur progressive.",
     category: 'pathologie'
   },
   {
     id: 83,
-    question: "L'entorse correspond à :",
-    options: ["Rupture os", "Lésion ligamentaire", "Luxation", "Fracture"],
+    question: "L'arthrite rhumatoïde affecte :",
+    options: ["Cartilage seul", "Articulations par inflammation auto-immune", "Os cortical", "Tendons seul"],
     correctAnswer: 1,
-    explanation: "Une entorse est une lésion des ligaments.",
+    explanation: "Maladie inflammatoire auto-immune : destruction progressive synoviale, cartilage, os.",
     category: 'pathologie'
   },
   {
     id: 84,
-    question: "La maladie de Paget se caractérise par :",
-    options: ["Os trop dense", "Remodelage excessif", "Os trop mou", "Absence calcium"],
+    question: "L'ostéonécrose correspond à :",
+    options: ["Infection osseuse", "Mort aseptique du tissu osseux", "Fracture", "Luxation"],
     correctAnswer: 1,
-    explanation: "La maladie de Paget implique un remodelage osseux anarchique.",
+    explanation: "Nécrose ischémique osseuse sans infection (hyperbaric O2 possible si précoce).",
     category: 'pathologie'
   },
   {
     id: 85,
-    question: "Le rachitisme est dû à un déficit en :",
-    options: ["Fer", "Vitamine D", "Vitamine C", "Calcium seul"],
-    correctAnswer: 1,
-    explanation: "Le rachitisme est causé par une carence en vitamine D chez l'enfant.",
+    question: "La scoliose est :",
+    options: ["Cyphose thoracique", "Lordose lombaire", "Courbure latérale colonne vertébrale", "Hernie discale"],
+    correctAnswer: 2,
+    explanation: "Déviation latérale colonne vertébrale, peut progresser chez enfant/adolescent.",
     category: 'pathologie'
   },
+  
+  // ARTICULATIONS - Questions 86-100
   {
     id: 86,
-    question: "L'ostéomalacie est l'équivalent adulte du :",
-    options: ["Rachitisme", "Ostéoporose", "Arthrose", "Paget"],
-    correctAnswer: 0,
-    explanation: "L'ostéomalacie est le rachitisme de l'adulte (carence vitamine D).",
-    category: 'pathologie'
+    question: "Une articulation synoviale comporte :",
+    options: ["Ligaments seulement", "Capsule + liquide synovial + cartilage", "Tendons", "Sang"],
+    correctAnswer: 1,
+    explanation: "Structure mobile : membrane synoviale, cartilage hyalin, ligaments stabilisateurs.",
+    category: 'articulations'
   },
   {
     id: 87,
-    question: "La maladie osseuse de Lobstein (ostéogenèse imparfaite) entraîne :",
-    options: ["Os trop durs", "Os fragiles", "Os normaux", "Os flexibles"],
+    question: "Le liquide synovial sert à :",
+    options: ["Numériser", "Lubrifier et nourrir cartilage", "Transporter oxygène", "Protéger os"],
     correctAnswer: 1,
-    explanation: "Maladie génétique avec os extrêmement fragiles (fragilité osseuse).",
-    category: 'pathologie'
+    explanation: "Produit par membrane synoviale : hyaluronate et protéines de lubrification.",
+    category: 'articulations'
   },
   {
     id: 88,
-    question: "La scoliose est une déviation :",
-    options: ["Antérieure", "Postérieure", "Latérale", "Rotatoire"],
-    correctAnswer: 2,
-    explanation: "La scoliose est une déviation latérale de la colonne vertébrale.",
-    category: 'pathologie'
+    question: "L'articulation gléno-humérale (épaule) est :",
+    options: ["Énarthrose (sphéroïdale)", "Arthrodire", "Ginglyme", "Trochléenne"],
+    correctAnswer: 0,
+    explanation: "Articulation très mobile permettant abduction-adduction, flexion-extension, rotation.",
+    category: 'articulations'
   },
   {
     id: 89,
-    question: "L'hypercyphose est une déviation :",
-    options: ["Latérale", "Antérieure", "Postérieure", "Rotatoire"],
-    correctAnswer: 2,
-    explanation: "L'hypercyphose est une courbure excessive vers l'arrière (dos rond).",
-    category: 'pathologie'
+    question: "L'articulation du coude est :",
+    options: ["Sphéroïdale", "Ginglyme (charnière)", "Condyloïde", "Plane"],
+    correctAnswer: 1,
+    explanation: "Articulation trochléenne : humérus-ulna flexion/extension, radio-ulnaire pronation/supination.",
+    category: 'articulations'
   },
   {
     id: 90,
-    question: "L'hyperlordose est une courbure excessive :",
-    options: ["Latérale", "Antérieure", "Postérieure", "Normale"],
+    question: "L'articulation du poignet est :",
+    options: ["Ginglyme", "Condyloïde", "Ellipsoïde", "Énarthrose"],
     correctAnswer: 1,
-    explanation: "L'hyperlordose est une courbure excessive vers l'avant (creux lombaire).",
-    category: 'pathologie'
+    explanation: "Articulation ellipsoïde : radius-carpe (scaphoïde, lunatum, triquetrum) flexion/extension/déviation.",
+    category: 'articulations'
   },
   {
     id: 91,
-    question: "La hernie discale touche principalement :",
-    options: ["Cervical", "Thoracique", "Lombaire", "Sacré"],
+    question: "L'articulation de la hanche est :",
+    options: ["Ginglyme", "Condyloïde", "Énarthrose", "Arthrodire"],
     correctAnswer: 2,
-    explanation: "La hernie discale est plus fréquente au niveau lombaire (L4-L5, L5-S1).",
-    category: 'pathologie'
+    explanation: "Articulation sphéroïdale : fémur-bassin très mobile protégée par profondeur cotyloïde.",
+    category: 'articulations'
   },
   {
     id: 92,
-    question: "Le ligament croisé antérieur du genou empêche :",
-    options: ["Flexion", "Extension", "Translation tibiale antérieure", "Rotation"],
-    correctAnswer: 2,
-    explanation: "Le LCA empêche le tibia de glisser en avant par rapport au fémur.",
+    question: "L'articulation du genou est :",
+    options: ["Sphéroïdale", "Ginglyme complexe", "Condyloïde", "Plane"],
+    correctAnswer: 1,
+    explanation: "Articulation charnière complexe : tibia-fémur flexion/extension + ménisques + ligaments croisés.",
     category: 'articulations'
   },
   {
     id: 93,
-    question: "Le ménisque a pour fonction :",
-    options: ["Lubrification", "Amortissement", "Stabilité latérale", "Rotation"],
+    question: "L'articulation talo-crurale (cheville) est :",
+    options: ["Sphéroïdale", "Ginglyme", "Condyloïde", "Pivot"],
     correctAnswer: 1,
-    explanation: "Les ménisques amortissent les chocs et répartissent les pressions.",
+    explanation: "Articulation charnière : talus-tibia/fibula, flexion plantaire/dorsale, peu de rotation.",
     category: 'articulations'
   },
   {
     id: 94,
-    question: "L'aponévrose est :",
-    options: ["Un muscle", "Une membrane fibreuse", "Un tendon", "Un ligament"],
+    question: "L'articulation sacro-iliaque est :",
+    options: ["Mobile", "Plane semi-mobile", "Très mobile", "Fibrose"],
     correctAnswer: 1,
-    explanation: "L'aponévrose est une membrane fibreuse qui entoure les muscles.",
-    category: 'anatomie'
+    explanation: "Articulation peu mobile : sacrum-ilium, absorbant forces pelviennes, stabilisée par forts ligaments.",
+    category: 'articulations'
   },
   {
     id: 95,
-    question: "La synoviale sécrète :",
-    options: ["Liquide synovial", "Cartilage", "Os", "Ligament"],
-    correctAnswer: 0,
-    explanation: "La membrane synoviale sécrète le liquide synovial.",
+    question: "L'articulation temporo-mandibulaire permet :",
+    options: ["Ouverture simple", "Abaissement + protraction + déviation", "Rotation seule", "Aucun mouvement"],
+    correctAnswer: 1,
+    explanation: "Articulation complexe : condyle mandibulaire-fosse temporale, mouvement 3D complexe.",
     category: 'articulations'
   },
   {
     id: 96,
-    question: "L'arthrocentèse est :",
-    options: ["Radiographie", "Ponction articulaire", "Opération", "Rééducation"],
+    question: "Les ligaments croisés du genou :",
+    options: ["Ne sont pas importants", "Contrôlent translation tibia/rotation", "Supportent poids", "Lubrifier"],
     correctAnswer: 1,
-    explanation: "L'arthrocentèse est une ponction du liquide articulaire.",
-    category: 'pathologie'
+    explanation: "LCA/LCP : prévention translation antérieure/postérieure, rotation et instabilité.",
+    category: 'articulations'
   },
   {
     id: 97,
-    question: "Le score T en ostéodensitométrie diagnostique :",
-    options: ["Arthrose", "Ostéoporose", "Arthrite", "Fracture"],
+    question: "Les ménisques du genou sont :",
+    options: ["Ligaments", "Cartilages fibreux absorbant choc", "Tendons", "Muscles"],
     correctAnswer: 1,
-    explanation: "Le score T mesure la densité minérale osseuse pour diagnostiquer l'ostéoporose.",
-    category: 'pathologie'
+    explanation: "Structures fibrocartilagineuses : améliore congruence, amortit charges, distribue pression.",
+    category: 'articulations'
   },
   {
     id: 98,
-    question: "Un T-score ≤ -2.5 définit :",
-    options: ["Normal", "Ostéopénie", "Ostéoporose", "Arthrose"],
+    question: "La stabilité articulaire dépend de :",
+    options: ["Géométrie osseuse seule", "Muscles seuls", "Géométrie + capsule + ligaments + muscles", "Aucun facteur"],
     correctAnswer: 2,
-    explanation: "T-score ≤ -2.5 = ostéoporose selon l'OMS.",
-    category: 'pathologie'
+    explanation: "Stabilité = architecture osseuse + contraintes capsulo-ligamentaires + dynamique musculaire.",
+    category: 'articulations'
   },
   {
     id: 99,
-    question: "Les bisphosphonates sont utilisés pour traiter :",
-    options: ["Arthrose", "Arthrite", "Ostéoporose", "Fracture"],
-    correctAnswer: 2,
-    explanation: "Les bisphosphonates inhibent la résorption osseuse dans l'ostéoporose.",
-    category: 'pathologie'
+    question: "Les cartilages hyalins des articulations :",
+    options: ["Contiennent vaisseaux", "Sont avasculaires et anuclés", "Ont une matrice osseuse", "Se régénèrent facilement"],
+    correctAnswer: 1,
+    explanation: "Cartilage hyalin : avasculaire, anuclé après maturité, régénération limitée.",
+    category: 'articulations'
   },
   {
     id: 100,
-    question: "La consolidation d'une fracture dure en moyenne :",
-    options: ["1-2 semaines", "3-6 semaines", "2-4 mois", "6-12 mois"],
+    question: "Le congruence articulaire désigne :",
+    options: ["Raideur", "Adaptation géométrique des surfaces", "Friction", "Inflation"],
     correctAnswer: 1,
-    explanation: "La consolidation osseuse prend généralement 3-6 semaines selon l'os et l'âge.",
-    category: 'pathologie'
+    explanation: "Adaptation forme surfaces réduisant stress, augmentant stabilité et longevité articulaire.",
+    category: 'articulations'
   }
 ];
 
 export const categoryLabels: Record<string, string> = {
-  anatomie: "Anatomie",
-  physiologie: "Physiologie",
-  pathologie: "Pathologie",
-  articulations: "Articulations"
+  'anatomie': 'Anatomie',
+  'physiologie': 'Physiologie',
+  'pathologie': 'Pathologie',
+  'articulations': 'Articulations'
 };
 
 export const categoryColors: Record<string, string> = {
-  anatomie: "bg-emerald-500",
-  physiologie: "bg-amber-500",
-  pathologie: "bg-rose-500",
-  articulations: "bg-sky-500"
+  'anatomie': 'bg-blue-100 text-blue-800',
+  'physiologie': 'bg-green-100 text-green-800',
+  'pathologie': 'bg-red-100 text-red-800',
+  'articulations': 'bg-purple-100 text-purple-800'
 };
