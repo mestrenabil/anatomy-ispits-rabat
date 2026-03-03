@@ -1,11 +1,10 @@
 export interface Question {
-  id: string;
+  id: number;
   question: string;
   options: string[];
-  correctAnswer: string;
+  correctAnswer: number;
   explanation: string;
-  category: string;
-  difficulty: "easy" | "medium" | "hard";
+  category: 'anatomie-structure' | 'physiologie-contraction' | 'types-fibres' | 'metabolisme';
 }
 
 export const muscularData: Question[] = [

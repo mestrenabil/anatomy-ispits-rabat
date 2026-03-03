@@ -1,11 +1,10 @@
 export interface Question {
-  id: string;
+  id: number;
   question: string;
   options: string[];
-  correctAnswer: string;
+  correctAnswer: number;
   explanation: string;
-  category: string;
-  difficulty: "easy" | "medium" | "hard";
+  category: 'generalite-immunite' | 'organes-lymphoides' | 'cellules-immunitaires' | 'anticorps' | 'complement' | 'inflammation' | 'hypersensibilite';
 }
 
 export const immuneData: Question[] = [

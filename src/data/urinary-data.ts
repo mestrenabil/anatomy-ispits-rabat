@@ -1,11 +1,10 @@
 export interface Question {
-  id: string;
+  id: number;
   question: string;
   options: string[];
-  correctAnswer: string;
+  correctAnswer: number;
   explanation: string;
-  category: string;
-  difficulty: "easy" | "medium" | "hard";
+  category: 'anatomie-reins' | 'anatomie-voies-urinaires' | 'physiologie-filtration' | 'regulation-homeostase' | 'pathologie-rein' | 'pathologie-voies-urinaires';
 }
 
 export const urinaryData: Question[] = [

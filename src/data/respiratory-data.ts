@@ -1,10 +1,10 @@
 export interface Question {
-  id: string;
+  id: number;
   question: string;
   options: string[];
-  correctAnswer: string;
+  correctAnswer: number;
   explanation: string;
-  category: string;
+  category: 'anatomie-voies-respiratoires' | 'physiologie-echanges' | 'mecanique-respiratoire' | 'regulation-respiration' | 'pathologie-pulmonaire';
 }
 
 export const respiratoryData: Question[] = [
@@ -305,7 +305,7 @@ export const respiratoryData: Question[] = [
   },
   {
     id: "resp-037",
-    question: "Quel est le volume résiduel (VR)?",
+    question: "Quel est le volume r��siduel (VR)?",
     options: ["Volume d'air expiré normalement", "Volume qui reste après expiration maximale", "Volume inspiré maximalement", "Espace mort"],
     correctAnswer: "Volume qui reste après expiration maximale",
     explanation: "Le volume résiduel (≈1.5 L) est l'air qui reste dans les poumons après une expiration maximale, maintenant les alvéoles ouvertes.",
